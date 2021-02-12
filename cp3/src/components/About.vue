@@ -1,13 +1,14 @@
 <template>
+<div class="main">
   <div class="content">
-    <div class="intro">
+    <div class="intro card">
       <h1>Let other students know about a course you took in university</h1>
     </div>
 
     <div class="vertical-line"></div>
 
-    <div class="info">
-      <h2>Why Rate a Course</h2>
+    <div class="info card">
+      <h2>Why Rate a Course?</h2>
       <p>
         While a professor can make a tremendous difference in the way a course is taught, most courses have core features that do not change.
         For example, the content of a course, how much work is required, how interesting or useful it is might not change depending on the professor.
@@ -19,6 +20,7 @@
       </p>
     </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -29,26 +31,36 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+.main {
+  background-color: #A68376;
+  border: 1px solid #A68376;
+  padding-bottom:100px;
+}
+
 .content {
-  margin-top: 15%;
+  margin-top: 10%;
   display: flex;
   justify-content: space-around;
   text-align: center;
 }
 
 .intro {
-  padding-top: 70px;
-  border: 1px solid red;
   width: 40%;
+  padding: 12px;
+}
+
+.intro h1 {
+  margin-top: 10%;
 }
 
 .vertical-line {
-  border-left: thick solid #ff0000;
+  border-left: 2px solid #491E1E;
 }
 
 .info {
-  border: 1px solid blue;
   width: 50%;
+  padding: 16px;
 }
 .info p {
   margin: 18px 8px;
