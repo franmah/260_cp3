@@ -12,12 +12,11 @@
             <a class="nav-link txt" href="#"><router-link to="/">Home</router-link><span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item dropdown">
-            <div class="nav-link dropdown-toggle txt" id="navbarDropdown" role="button" 
-                  data-toggle="dropdown" >
+            <div class="nav-link dropdown-toggle clickable-link" id="navbarDropdown" role="button" data-toggle="dropdown" >
               Universities
             </div>
             <div  class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a @click="reloadPage(university.id)" v-for="university in universities" v-bind:key="university.id" class="dropdown-item txt">
+              <a @click="reloadPage(university.id)" v-for="university in universities" v-bind:key="university.id" class="dropdown-item clickable-link">
                 {{university.name}}</a>
             </div>
           </li>
@@ -45,13 +44,7 @@ export default {
 
 <style scoped>
 
-.navbar {
-  background-color: white!important;
-  color: black !important;
-}
-
-
-.txt {
-  color: #ADADAD !important;
+.clickable-link :hover {
+  cursor: pointer !important;
 }
 </style>
