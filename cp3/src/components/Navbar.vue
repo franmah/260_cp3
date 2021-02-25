@@ -1,7 +1,7 @@
 <template>
   <div class="menu" >
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand txt" href="#"><router-link to="/">RateMyCourse</router-link></a>
+      <a class="navbar-brand txt" href="#"><router-link to="/" >RateMyCourse</router-link></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -13,12 +13,12 @@
           </li>
           <li class="nav-item dropdown">
             <div class="nav-link dropdown-toggle txt" id="navbarDropdown" role="button" 
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  data-toggle="dropdown" >
               Universities
             </div>
             <div  class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a v-for="university in universities" v-bind:key="university.id" class="dropdown-item txt">
-                <router-link :to="{ name: 'University', params: { id: university.id }}">{{university.name}}</router-link></a>
+              <a @click="reloadPage(university.id)" v-for="university in universities" v-bind:key="university.id" class="dropdown-item txt">
+                {{university.name}}</a>
             </div>
           </li>
         </ul>
@@ -34,15 +34,22 @@ export default {
       universities: this.$root.$data.universities,
     }
   }, 
+  methods: {
+    reloadPage(id) {
+      this.$router.push(`/university/${id}/`);
+      this.$router.go();
+    }
+  }
 }
 </script>
 
 <style scoped>
 
 .navbar {
-  background-color: #491E1E !important;
-  color: white !important;
+  background-color: white!important;
+  color: black !important;
 }
+
 
 .txt {
   color: #ADADAD !important;

@@ -33,7 +33,6 @@ export default {
     const id = this.$route.params.id;
     console.log(id)
     this.university = this.$root.$data.universities[id];
-    console.log(JSON.stringify(this.university,null, 2));
   },
 }
 </script>
